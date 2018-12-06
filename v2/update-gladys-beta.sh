@@ -53,7 +53,7 @@ cp -ar $TMP_HOOK_FOLDER/. $GLADYS_FOLDER/api/hooks
 cp -ar $TMP_CACHE_FOLDER/. $GLADYS_FOLDER/cache
 
 # Copy hooks assets
-grunt copyHooksAssets
+cd $GLADYS_FOLDER && grunt copyHooksAssets && cd ..
 
 # restart gladys
 pm2 start /home/pi/gladys/app.js --name gladys
