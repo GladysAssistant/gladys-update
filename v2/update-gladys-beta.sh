@@ -52,9 +52,8 @@ tar zxvf gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
 cp -ar $TMP_HOOK_FOLDER/. $GLADYS_FOLDER/api/hooks
 cp -ar $TMP_CACHE_FOLDER/. $GLADYS_FOLDER/cache
 
-# init 
-#cd $GLADYS_FOLDER
-#node init.js
+# Copy hooks assets
+grunt copyHooksAssets
 
 # restart gladys
 pm2 start /home/pi/gladys/app.js --name gladys
