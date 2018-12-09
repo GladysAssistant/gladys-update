@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-GLADYS_VERSION=3.11.3
-EXPECTED_CHECKSUM="6d476ed7fbe6454fc1c4755814e73f35  gladys-v3.11.3-Linux-armv6l.tar.gz"
+GLADYS_VERSION=3.11.6
+EXPECTED_CHECKSUM="077e9235a5155bdb9c600d7108e09d68  gladys-v3.11.6-Linux-armv6l.tar.gz"
 
 TMP_HOOK_FOLDER="/tmp/gladys_hooks"
 TMP_CACHE_FOLDER="/tmp/gladys_cache"
@@ -25,12 +25,12 @@ cp -ar $GLADYS_FOLDER/api/hooks/. $TMP_HOOK_FOLDER
 cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER
 
 # We clean the installation file if it already exists
-rm gladys-v3.11.3-Linux-armv6l.tar.gz || true
+rm gladys-v3.11.6-Linux-armv6l.tar.gz || true
 
 # download update
-wget https://mirror-fr-2.gladysproject.com/upgrades/gladys-v3.11.3-Linux-armv6l.tar.gz
+wget https://mirror-fr-2.gladysproject.com/upgrades/gladys-v3.11.6-Linux-armv6l.tar.gz
 
-CHECKSUM="$(md5sum gladys-v3.11.3-Linux-armv6l.tar.gz)"
+CHECKSUM="$(md5sum gladys-v3.11.6-Linux-armv6l.tar.gz)"
 
 # check checksum
 if [ "$CHECKSUM" != "$EXPECTED_CHECKSUM" ]
@@ -52,9 +52,8 @@ tar zxvf gladys-v$GLADYS_VERSION-Linux-armv6l.tar.gz
 cp -ar $TMP_HOOK_FOLDER/. $GLADYS_FOLDER/api/hooks
 cp -ar $TMP_CACHE_FOLDER/. $GLADYS_FOLDER/cache
 
-# init 
-#cd $GLADYS_FOLDER
-#node init.js
+# Copy hooks assets
+cd $GLADYS_FOLDER && grunt copyHooksAssets && cd ..
 
 # restart gladys
 pm2 start /home/pi/gladys/app.js --name gladys
