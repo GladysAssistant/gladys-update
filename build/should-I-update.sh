@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENT_VERSION=$(curl -s 'https://raw.githubusercontent.com/GladysProject/Gladys/master/package.json' | jq -r '.version')
+CURRENT_VERSION=$(curl -s 'https://raw.githubusercontent.com/gladysassistant/Gladys/master/package.json' | jq -r '.version')
 
 echo "CURRENT GLADYS VERSION IS :"
 echo $CURRENT_VERSION

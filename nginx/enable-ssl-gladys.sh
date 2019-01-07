@@ -8,7 +8,7 @@
 
 
 echo "Creating SSL Certificate"
-sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt  -subj "/C=FR/ST=IDF/L=Paris/O=Gladys/CN=gladysproject.com"
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt  -subj "/C=FR/ST=IDF/L=Paris/O=Gladys/CN=gladysassistant.com"
 
 echo "Creating strong Diffie-Hellman group"
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048

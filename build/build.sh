@@ -18,7 +18,7 @@ echo "Building file $dest_file"
 rm -rf gladys
 
 # Cloning repository
-git clone https://github.com/GladysProject/Gladys gladys
+git clone https://github.com/gladysassistant/Gladys gladys
 
 # Go to folder
 cd gladys

@@ -28,7 +28,7 @@ cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER
 rm gladys-v3.11.6-Linux-armv6l.tar.gz || true
 
 # download update
-wget https://mirror-fr-2.gladysproject.com/upgrades/gladys-v3.11.6-Linux-armv6l.tar.gz
+wget https://mirror-fr-2.gladysassistant.com/upgrades/gladys-v3.11.6-Linux-armv6l.tar.gz
 
 CHECKSUM="$(md5sum gladys-v3.11.6-Linux-armv6l.tar.gz)"
 
