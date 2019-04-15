@@ -19,10 +19,10 @@ mkdir $TMP_HOOK_FOLDER
 mkdir $TMP_CACHE_FOLDER
 
 # We copy the hooks repository of the old folder
-cp -ar $GLADYS_FOLDER/api/hooks/. $TMP_HOOK_FOLDER
+cp -ar $GLADYS_FOLDER/api/hooks/. $TMP_HOOK_FOLDER || true
 
 # We copy the cache folder of the old gladys
-cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER
+cp -ar $GLADYS_FOLDER/cache/. $TMP_CACHE_FOLDER || true
 
 # We clean the installation file if it already exists
 rm gladys-v3.13.0-Linux-armv6l.tar.gz || true
